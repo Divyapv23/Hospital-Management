@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<table style="width:100%">
+    <tr style="text-align:center">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+
+
+    </tr>
+
+    {% for i in data %}
+    <tr style="text-align:center">
+        <td>{{i.name}}</td>
+        <td style="width:400px">{{i.mail}}</td>
+        <td style="width:400px">{{i.password}}</td>
+
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+</body>
+</html>
+{% endblock %}

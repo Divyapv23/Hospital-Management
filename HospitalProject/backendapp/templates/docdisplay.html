@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<table style="width:100%">
+    <tr style="text-align:center">
+        <th>Name</th>
+        <th>Image</th>
+        <th>Department</th>
+        <th>Qualification</th>
+        <th>Options</th>
+
+    </tr>
+
+    {% for i in data %}
+    <tr style="text-align:center">
+        <td>{{i.Drname}}</td>
+        <td>
+            <img src="{{i.Drimage.url}}" height="100px" width="100px">
+        </td>
+        <td style="width:400px">{{i.Dept}}</td>
+        <td style="width:400px">{{i.Qul}}</td>
+        <td>
+            <form action="{% url 'doceditpage' dataid=i.id %}">
+                <button type="submit">Edit</button>
+            </form>
+        </td>
+        <td>
+            <form action="{% url 'docdeletepage' dataid=i.id %}">
+                <button type="submit" class="btn1">Delete</button>
+            </form>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+</body>
+</html>
+{% endblock %}
